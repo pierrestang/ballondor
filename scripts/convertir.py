@@ -13,15 +13,15 @@ la première, 48 images réparties sur le tour, incrustation chroma (fond vert �
 transparent, suppression du reflet vert sur les bords), puis mise à l'échelle :
 tous les joueurs ont la même taille, pieds en bas du cadre, axe de rotation au centre.
 
-La photo studio détourée de face (dossier ~/joueurs, cf. compétence detourage-joueurs)
+La photo studio détourée de face (dossier joueurs/, cf. compétence detourage-joueurs)
 est bien plus nette que la vidéo : elle est calée sur l'image 000 et le site l'affiche
 quand le scroll s'arrête de face. Pas de photo de dos : l'image de dos de la vidéo
 diffère trop de la photo (nom et numéro dédoublés pendant le fondu).
 
 Usage (depuis BO2026/) :
-  python3 scripts/convertir.py ~/videos/<id>.mp4 <id-du-joueur>
-  python3 scripts/convertir.py ~/videos/<id>.mp4 <id> --controle   # + planche de contrôle
-  python3 scripts/convertir.py ~/videos/lionel-messi.mp4 lionel-messi --forcer-photo
+  python3 scripts/convertir.py videos/<id>.mp4 <id-du-joueur>
+  python3 scripts/convertir.py videos/<id>.mp4 <id> --controle   # + planche de contrôle
+  python3 scripts/convertir.py videos/lionel-messi.mp4 lionel-messi --forcer-photo
 """
 
 import argparse
@@ -39,7 +39,7 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "public/assets/players/sequences"
 CHECKS = ROOT / "assets-source/checks"
-PHOTOS = Path.home() / "joueurs"   # detoures/*.png + projet.json (noms et vues)
+PHOTOS = ROOT / "joueurs"   # detoures/*.png + projet.json (noms et vues)
 
 FRAME_COUNT = 48
 CANVAS = (810, 1440)          # taille de chaque image de la séquence (l × h)

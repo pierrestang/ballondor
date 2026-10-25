@@ -18,11 +18,11 @@ Vite + React + Framer Motion. Rien d'autre (GSAP retiré le 27/09/2026 : plus d'
 ```
 npm run dev | npm run build
 python3 scripts/excel_vers_json.py controle-stats-ballon-dor.xlsx   # Excel → players.json
-python3 scripts/convertir.py ~/videos/<fichier>.mp4 <id>           # vidéo fond vert → séquence AVIF
+python3 scripts/convertir.py videos/<fichier>.mp4 <id>           # vidéo fond vert → séquence AVIF
 node scripts/comparer_formats.mjs [parties]                        # moteur du jeu : vérifs + comparaison
 ```
 
-Vidéos brutes hors projet (`~/videos/`) ; rien d'inutilisé dans `public/` (tout y est publié). Sources d'images : `assets-source/` (dont `coins-q70/`, pièces avant réencodage en AVIF q50). Aperçu des liens partagés : `public/og.jpg` (1200 × 630) et balises Open Graph dans `index.html` (`og:url` et `og:image` en adresses absolues).
+Vidéos brutes dans `videos/` et photos studio détourées dans `joueurs/` (non suivis par git) ; rien d'inutilisé dans `public/` (tout y est publié). Sources d'images : `assets-source/` (dont `coins-q70/`, pièces avant réencodage en AVIF q50). Aperçu des liens partagés : `public/og.jpg` (1200 × 630) et balises Open Graph dans `index.html` (`og:url` et `og:image` en adresses absolues).
 
 ## Fichiers
 
