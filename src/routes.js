@@ -22,9 +22,9 @@ export function parseRoute(hash) {
 export function routeOf({ page, pair, solo }) {
   if (page === 'final') {
     const [a, b] = pair.map((k) => players[k])
-    return { hash: `#duel/${a.id}/${b.id}`, title: `${a.nom} contre ${b.nom} · Ballon d'Or 2026` }
+    return { hash: `#duel/${a.id}/${b.id}`, title: `${a.nom} contre ${b.nom} · Ballondor` }
   }
-  if (page === 'solo') return { hash: `#joueur/${players[solo].id}`, title: `${players[solo].nom} · Ballon d'Or 2026` }
-  if (page === 'game') return { hash: '#classement', title: "Mon classement · Ballon d'Or 2026" }
-  return { hash: '', title: "Ballon d'Or 2026" }
+  if (page === 'solo') return { hash: `#joueur/${players[solo].id}`, title: `${players[solo].nom} · Ballondor` }
+  if (page === 'game') return { hash: '#classement', title: "Mon classement · Ballondor" }
+  return { hash: '', title: 'Ballondor' }
 }
