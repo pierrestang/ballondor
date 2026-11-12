@@ -5,7 +5,7 @@ Excel → players.json.
 Lit les onglets « Synthese », « Detail » et « Distinctions » du classeur de contrôle
 et écrit players.json à la racine du projet, au format attendu par le site.
 
-Usage (depuis BO2026/) :
+Usage (depuis ballondor/) :
   python3 scripts/excel_vers_json.py controle-stats-ballon-dor.xlsx
 """
 

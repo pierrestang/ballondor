@@ -7,7 +7,7 @@ Ce fichier décrit **l'état actuel**. Le détail de chaque décision, date par 
 ## Contraintes
 
 - **Léger.** Intro : ~680 Ko au premier chargement (JS + CSS ~200 Ko, 10 pièces ~480 Ko), hors polices. Les séquences vidéo (~1,8 Mo par joueur) ne se chargent qu'à l'entrée dans Duel (sélection : préchargement des deux joueurs affichés), dans la page du duel, la Présentation ou un duel du jeu. Jamais depuis l'intro.
-- **En ligne** : https://pierrestang.github.io/ballon-dor-2026/ (dépôt `pierrestang/ballon-dor-2026`). Chaque push sur `main` recompile et publie (`.github/workflows/pages.yml`) ; config Firebase dans les variables Actions du dépôt (en local : `.env`).
+- **En ligne** : https://pierrestang.github.io/ballondor/ (dépôt `pierrestang/ballondor`, dossier local `~/ballondor` ; ex-`ballon-dor-2026`, renommé le 12/11/2026 : l’ancienne adresse ne marche plus). Chaque push sur `main` recompile et publie (`.github/workflows/pages.yml`) ; config Firebase dans les variables Actions du dépôt (en local : `.env`).
 - **Déploiement GitHub Pages** : base Vite relative (`./`). Aucun chemin absolu (`/…`) ; les chemins du JSON commencent par `assets/`, à préfixer avec `asset()` (`data.js`). Une `url()` passée par une variable CSS se résout depuis la feuille de style : lui donner une adresse absolue (ex. `--coin`, `Coin.jsx`).
 - `prefers-reduced-motion` respecté partout (pas de rotation ni de vol ; fondus).
 

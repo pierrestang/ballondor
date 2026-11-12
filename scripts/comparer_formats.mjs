@@ -1,7 +1,7 @@
 // Compare le format en poules (src/tournament.js) et le système suisse (src/swiss.js) : des
 // milliers de parties jouées par un visiteur dont le classement « vrai » est caché, puis on
 // mesure à quel point chaque format le retrouve. Vérifie aussi le moteur suisse (duels jamais
-// répétés, une partie par joueur et par ronde, annulation). Lancer depuis BO2026/ :
+// répétés, une partie par joueur et par ronde, annulation). Lancer depuis ballondor/ :
 // node scripts/comparer_formats.mjs [nombre de parties]
 import { readFileSync } from 'node:fs'
 import assert from 'node:assert/strict'

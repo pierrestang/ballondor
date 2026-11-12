@@ -18,7 +18,7 @@ est bien plus nette que la vidéo : elle est calée sur l'image 000 et le site l
 quand le scroll s'arrête de face. Pas de photo de dos : l'image de dos de la vidéo
 diffère trop de la photo (nom et numéro dédoublés pendant le fondu).
 
-Usage (depuis BO2026/) :
+Usage (depuis ballondor/) :
   python3 scripts/convertir.py videos/<id>.mp4 <id-du-joueur>
   python3 scripts/convertir.py videos/<id>.mp4 <id> --controle   # + planche de contrôle
   python3 scripts/convertir.py videos/lionel-messi.mp4 lionel-messi --forcer-photo

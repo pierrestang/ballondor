@@ -1,5 +1,5 @@
 // Vérifie le moteur du mode « Mon classement » (src/tournament.js) : 10 000 tournois à votes
-// aléatoires, puis des cas forcés. Lancer depuis BO2026/ : node scripts/simuler_tournoi.mjs
+// aléatoires, puis des cas forcés. Lancer depuis ballondor/ : node scripts/simuler_tournoi.mjs
 import { readFileSync } from 'node:fs'
 import assert from 'node:assert/strict'
 import { SEEDS, analyze, createTournament, pairKey, standings, undo, vote } from '../src/tournament.js'
