@@ -1,6 +1,5 @@
 // Moteur du mode « Mon classement » : système suisse (depuis le 27/09/2026, remplace les poules
-// à têtes de série de tournament.js). Module pur : utilisé par Game.jsx et par
-// scripts/comparer_formats.mjs, qui le compare à l'ancien format.
+// à têtes de série). Module pur : utilisé par Game.jsx et par scripts/comparer_formats.mjs.
 //
 // Format : 10 joueurs, `rounds` rondes de 5 duels, tout le monde joue à chaque ronde. Ronde 1 :
 // appariement tiré au sort (seul hasard du format, aucune tête de série). Rondes suivantes : les

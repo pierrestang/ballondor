@@ -1,11 +1,11 @@
-// Compare le format en poules (src/tournament.js) et le système suisse (src/swiss.js) : des
-// milliers de parties jouées par un visiteur dont le classement « vrai » est caché, puis on
-// mesure à quel point chaque format le retrouve. Vérifie aussi le moteur suisse (duels jamais
+// Compare des variantes du système suisse (src/swiss.js) : des milliers de parties jouées par
+// un visiteur dont le classement « vrai » est caché, puis on mesure à quel point chaque variante
+// le retrouve. (L'ancien format en poules, src/tournament.js, a été supprimé le 12/11/2026 : il
+// faisait 94 % de podiums exacts contre 99,7 % au suisse.) Vérifie aussi le moteur suisse (duels jamais
 // répétés, une partie par joueur et par ronde, annulation). Lancer depuis ballondor/ :
 // node scripts/comparer_formats.mjs [nombre de parties]
 import { readFileSync } from 'node:fs'
 import assert from 'node:assert/strict'
-import * as pools from '../src/tournament.js'
 import * as swiss from '../src/swiss.js'
 
 const ids = JSON.parse(readFileSync(new URL('../players.json', import.meta.url))).map((p) => p.id)
@@ -34,7 +34,6 @@ const VISITORS = [
 ]
 
 const FORMATS = [
-  { name: 'Poules + têtes de série', engine: pools, create: () => pools.createTournament(ids) },
   { name: 'Suisse 5, SB + Buchholz', engine: swiss, create: () => swiss.createSwiss(ids, Math.random, 5, 0) },
   { name: 'Suisse 5 + vote top 3', engine: swiss, create: () => swiss.createSwiss(ids, Math.random, 5, 3) },
   { name: 'Suisse 5 + vote top 5', engine: swiss, create: () => swiss.createSwiss(ids, Math.random, 5, 5) },
@@ -43,12 +42,8 @@ const FORMATS = [
   { name: 'Suisse 6 + vote top 3', engine: swiss, create: () => swiss.createSwiss(ids, Math.random, 6, 3) },
 ]
 
-// Classements cachés : au hasard (les favoris du visiteur ne sont pas forcément les têtes de
-// série), ou les têtes de série en tête (cas le plus favorable aux poules).
-const TRUTHS = [
-  { name: 'favoris au hasard', make: () => shuffle(ids) },
-  { name: 'favoris = têtes de série', make: () => [...shuffle(pools.SEEDS), ...shuffle(ids.filter((id) => !pools.SEEDS.includes(id)))] },
-]
+// Classement caché du visiteur : au hasard.
+const TRUTHS = [{ name: 'favoris au hasard', make: () => shuffle(ids) }]
 
 function play(engine, state, pick) {
   for (let n = 0; n < 200; n++) {
@@ -61,7 +56,7 @@ function play(engine, state, pick) {
 
 /** Vérifications propres au suisse. */
 function checkSwiss(state, a) {
-  const all = a.rounds.flat().map(([x, y]) => pools.pairKey(x, y))
+  const all = a.rounds.flat().map(([x, y]) => swiss.pairKey(x, y))
   if (a.rounds.length <= 5) assert.equal(new Set(all).size, all.length, 'jamais deux fois le même duel')
   for (const pairs of a.rounds) assert.equal(new Set(pairs.flat()).size, ids.length, 'chacun joue une fois par ronde')
   let u = state
@@ -84,7 +79,7 @@ for (const truthKind of TRUTHS) {
         const a = f.engine.analyze(s)
         const r = a.ranking
         assert.equal(new Set(r).size, 10, 'le classement est une permutation')
-        if (f.engine === swiss && t < 500) checkSwiss(s, a)
+        if (t < 500) checkSwiss(s, a)
         const pos = (id) => r.indexOf(id)
         m.duels += s.history.length
         m.maxDuels = Math.max(m.maxDuels, s.history.length)

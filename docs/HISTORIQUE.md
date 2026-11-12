@@ -307,3 +307,5 @@ Demande : le défilement façon tableau d'affichage (lettres au hasard qui se po
 ## Tri du dossier (12/11/2026)
 
 Supprimés (récupérables dans l'historique git) : vidéo `hf_20260922_184548_….mp4` à la racine (jamais utilisée), `pieces/` (PNG d'origine des pièces ; sources gardées : `assets-source/coins-q70/`), dans `public/` les fichiers que rien n'utilisait (drapeaux us, de, eu ; logos unfp, vdv, ballon-dor, `leagues-cup.svg`), dans `assets-source/` la police Monimer (jamais chargée), les essais abandonnés `fonds/`, `rideaux/`, `pieces-clubs/`, `trophies-png/` et `players-ancien-format.json`. Gardé : `medailles/target-bronze.webp` (pas utilisé aujourd'hui, mais le script peut le demander).
+
+Anciennes versions supprimées le même jour : `assets-source/ancien/` (anciennes pages Duel, Details, intro CRT…, renvoyées plus haut dans ce fichier), l'ancien moteur en poules (`src/tournament.js`, `scripts/simuler_tournoi.mjs` ; `comparer_formats.mjs` ne compare plus que des variantes du suisse), et, hors git, `assets-source/sequences-anciennes/` et `assets-source/checks/` (`convertir.py --check` y réécrit ses planches de contrôle).

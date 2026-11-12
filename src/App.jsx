@@ -41,7 +41,7 @@ export default function App() {
   // Duel de départ (retour depuis la page du duel sans sélection) : Olise (0) contre Messi (3).
   const [pair, setPair] = useState(start.pair ?? [0, 3])
   // Page du duel (Final.jsx) : joueurs puis tableaux au scroll ; remplace, depuis le 26/09/2026,
-  // l'ancienne page de comparaison et celle des tableaux (assets-source/ancien/).
+  // l'ancienne page de comparaison et celle des tableaux.
   const [final, setFinal] = useState(start.page === 'final')
   const [game, setGame] = useState(start.page === 'game')   // mode « Mon classement »
   // Versions de l'intro (MODES, Carousel.jsx) : 0 Les candidats, 1 Duel, 2 Mon classement (par

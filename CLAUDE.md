@@ -19,7 +19,7 @@ Vite + React + Framer Motion. Rien d'autre (GSAP retiré le 27/09/2026 : plus d'
 npm run dev | npm run build
 python3 scripts/excel_vers_json.py controle-stats-ballon-dor.xlsx   # Excel → players.json
 python3 scripts/convertir.py videos/<fichier>.mp4 <id>           # vidéo fond vert → séquence AVIF
-node scripts/comparer_formats.mjs [parties]                        # moteur du jeu : vérifs + comparaison
+node scripts/comparer_formats.mjs [parties]                        # moteur du jeu : vérifs + variantes du suisse
 ```
 
 Vidéos brutes dans `videos/` et photos studio détourées dans `joueurs/` (non suivis par git) ; rien d'inutilisé dans `public/` (tout y est publié). Sources d'images : `assets-source/` (dont `coins-q70/`, pièces avant réencodage en AVIF q50). Aperçu des liens partagés : `public/og.jpg` (1200 × 630) et balises Open Graph dans `index.html` (`og:url` et `og:image` en adresses absolues).
@@ -33,7 +33,6 @@ Vidéos brutes dans `videos/` et photos studio détourées dans `joueurs/` (non 
 - `sequence.js` : chargement des séquences (48 AVIF par joueur) ; images décodées gardées pour 6 joueurs au plus (`KEEP`), les plus anciens non affichés libérés (une séquence décodée pèse plus de 100 Mo).
 - `Coin.jsx` : pièce 3D, `LiveCoin` (flottement + tour au survol), `useCoinTurn` (changement de joueur : tour complet, image changée de profil), `COIN_TURN`. `Letters.jsx` : textes en arc (`ArcText`, `NameArc` frappé, `GlitchArc`, `ScrollLetters`).
 - `styles.css` n'importe que `src/styles/NN-*.css`, **dans l'ordre de la cascade** (base, intro, sélection, duel, tableaux, page du duel, …, navigation). Modifier la règle d'origine plutôt qu'ajouter une surcharge en fin de fichier.
-- `tournament.js` + `scripts/simuler_tournoi.mjs` : ancien moteur en poules, plus importé par le site, gardé pour la comparaison.
 
 ## Parcours
 
