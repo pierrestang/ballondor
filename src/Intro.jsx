@@ -79,7 +79,7 @@ const STATUS = (pct) => (pct < 30 ? 'INITIALISATION'
 
 // Silhouette du trophée (viewBox 160 × 180), d'après le Ballon d'Or : grand ballon à panneaux
 // (pentagone central, hexagones, pentagones du pourtour), coupe évasée qui le porte,
-// socle rond à deux étages vu légèrement de dessus. Même dessin dans public/favicon.svg.
+// socle rond à deux étages vu légèrement de dessus.
 export const TROPHY_PATHS = [
   'M80 8a56 56 0 1 0 0.01 0',                                                   // ballon
   'M80 53L93.3 62.7L88.2 78.3L71.8 78.3L66.7 62.7Z',                             // pentagone central

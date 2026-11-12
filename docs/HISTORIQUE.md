@@ -43,7 +43,7 @@ Tous les chemins du JSON commencent par `assets/` : les préfixer avec `import.m
 
 ## Icône de l'onglet
 
-`public/favicon.svg` : le logo du site (12/10/2026, `assets-source/logo-ballon-dor-2026.png`) redessiné en vectoriel — ballon en cercle et socle en trapèze, trait or #E3B66E épaissi, sans le texte, sur fond #0B0B0B à coins arrondis (déclaré dans `index.html`, `favicon.png` 64 px en repli). `public/apple-touch-icon.png` : le logo complet, texte compris, réduit à 180 px (remplace la pièce de Messi).
+Icônes (12/11/2026) : nouveau logo Ballon d'Or (ballon à traits verticaux, « BALLON D'OR » en dessous, or sur noir ; source `assets-source/logo-ballon-dor-2026.png`). `public/favicon.png` (64 px, seule icône d'onglet déclarée dans `index.html`) : le ballon et ses traits seuls, sans le texte ; `public/apple-touch-icon.png` (180 px) : le logo complet, texte compris. `favicon.svg` retiré. Avant (12/10/2026) : ballon en cercle sur socle en trapèze, redessiné en SVG.
 
 ## Page 0 — l'intro (chargement : `src/Intro.jsx` ; scène : `src/Carousel.jsx`)
 
